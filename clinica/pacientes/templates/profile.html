@@ -1,0 +1,6 @@
+{% extends "account/base_entrance.html" %}
+{% block content%}
+{% for user in users %}
+    <li>{{ user.name }}</li>
+{% endfor %}
+{%endblock content%}
