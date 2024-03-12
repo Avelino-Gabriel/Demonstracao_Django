@@ -8,6 +8,6 @@ def lista_pacientes(request):
     return render(request, 'lista_pacientes.html', {'pacientes': pacientes})
 
 def profile(request):
-    user = [{'name' : request}]
+    user = [{'name' : request.user}]
     return render(request, 'profile.html', {'users': user})
 
