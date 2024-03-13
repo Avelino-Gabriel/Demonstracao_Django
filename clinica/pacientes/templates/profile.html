@@ -1,6 +1,7 @@
 {% extends "account/base_entrance.html" %}
 {% block content%}
-{% for user in users %}
-    <p>Logado como <b>{{ user.name }}</b></p>
-{% endfor %}
+
+    <p>Logado como <b>{{ users.name }}</b></p>
+
+    <p>{{ idade }}</p>
 {%endblock content%}

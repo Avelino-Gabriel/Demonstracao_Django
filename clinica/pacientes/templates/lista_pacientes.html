@@ -1,7 +1,10 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
+    
     <title>Pacientes</title>
+    <link rel="stylesheet" href="{% static 'pacientes/css/style.css' %}">
 </head>
 <body>
     <h1>Lista de Pacientes</h1>
@@ -10,6 +13,7 @@
             <li>{{ paciente.nome }} ({{ paciente.idade }} anos)</li>
         {% endfor %}
     </ul>
+    <button class="button" onclick = "window.location.href ='./login'">Fazer Login</button>
 </body>
 </html>
 
