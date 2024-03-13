@@ -1,3 +1,17 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border-radius: 15px;    
+    background-color: #F2F2F2;
+    box-shadow: 0px 6px 5px 0px #00000040;
+    padding: 80px 10%;
+    margin: 115px 0;
+}
+
 .button{
     width: 130px;
     height: 40px;
