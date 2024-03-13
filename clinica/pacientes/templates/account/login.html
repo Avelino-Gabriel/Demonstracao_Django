@@ -32,9 +32,10 @@
             {% endif %}
         {% endslot %}
         {% slot actions %}
-            {% element button class="button" type="submit" tags="prominent,login"  %}
+            <button type="submit" class="button" tags="prominent,login">
                 {% trans "Entrar" %}
-            {% endelement %}
+            </button>
+                
         {% endslot %}
     {% endelement %}
     {% if SOCIALACCOUNT_ENABLED %}
