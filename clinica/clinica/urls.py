@@ -20,7 +20,7 @@ from django.contrib import admin
 from pacientes.views import CustomSignupView
 
 urlpatterns = [
-    path('', views.lista_pacientes, name='lista_pacientes'),
+    path('', views.lista_pacientes, name='home'),
     path('admin/', admin.site.urls),
     path('', include('allauth.urls'), name='login'),
     path('accounts/profile/', views.profile, name='profile'),

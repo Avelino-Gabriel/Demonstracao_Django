@@ -2,18 +2,23 @@
 {% load i18n %}
 {% load account %}
 {% load allauth %}
+{% load static %}
 {% block head_title %}
-    {% trans "Confirm Email Address" %}
+    {% trans "Confirmar Endereço de E-mail" %}
 {% endblock head_title %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'pacientes/css/style.css' %}">
+    {% endblock extra_head %}
 {% block content %}
-    {% element h1 %}
-        {% trans "Confirm Email Address" %}
+    <div class="container">
+        {% element h1 %}
+        {% trans "Confirmar Endereço de E-mail" %}
     {% endelement %}
     {% if confirmation %}
         {% user_display confirmation.email_address.user as user_display %}
         {% if can_confirm %}
             <p>
-                {% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an email address for user {{ user_display }}.{% endblocktrans %}
+                {% blocktrans with confirmation.email_address.email as email %}Confirme se <a href="mailto:{{ email }}">{{ email }}</a> é um endereço de e-mail do usuário {{ user_display }}.{% endblocktrans %}
             </p>
             {% url 'account_confirm_email' confirmation.key as action_url %}
             {% element form method="post" action=action_url %}
@@ -35,4 +40,5 @@
             {% blocktrans %}This email confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new email confirmation request</a>.{% endblocktrans %}
         </p>
     {% endif %}
+    </div>
 {% endblock content %}

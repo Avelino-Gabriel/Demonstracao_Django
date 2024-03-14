@@ -2,7 +2,7 @@
 {% load allauth %}
 {% load i18n %}
 {% block reauthenticate_content %}
-    <p>{% blocktranslate %}Enter your password:{% endblocktranslate %}</p>
+    <p>{% blocktranslate %}Digite sua senha:{% endblocktranslate %}</p>
     {% url 'account_reauthenticate' as action_url %}
     {% element form form=form method="post" action=action_url %}
         {% slot body %}
@@ -17,7 +17,7 @@
         {% endslot %}
         {% slot actions %}
             {% element button type="submit" %}
-                {% trans "Confirm" %}
+                {% trans "Confirmar" %}
             {% endelement %}
         {% endslot %}
     {% endelement %}
