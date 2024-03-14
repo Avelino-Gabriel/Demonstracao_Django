@@ -2,30 +2,30 @@
 {% load i18n %}
 {% load allauth %}
 {% block head_title %}
-    {% trans "Sign In" %}
+    {% trans "Login" %}
 {% endblock head_title %}
 {% block content %}
     {% if process == "connect" %}
         {% element h1 %}
-            {% blocktrans with provider.name as provider %}Connect {{ provider }}{% endblocktrans %}
+            {% blocktrans with provider.name as provider %}Conectar {{ provider }}{% endblocktrans %}
         {% endelement %}
         <p>
-            {% blocktrans with provider.name as provider %}You are about to connect a new third-party account from {{ provider }}.{% endblocktrans %}
+            {% blocktrans with provider.name as provider %}Você está prestes a conectar uma nova conta de terceiros de {{ provider }}.{% endblocktrans %}
         </p>
     {% else %}
         {% element h1 %}
-            {% blocktrans with provider.name as provider %}Sign In Via {{ provider }}{% endblocktrans %}
+            {% blocktrans with provider.name as provider %}Faça login via {{ provider }}{% endblocktrans %}
         {% endelement %}
         <p>
-            {% blocktrans with provider.name as provider %}You are about to sign in using a third-party account from {{ provider }}.{% endblocktrans %}
+            {% blocktrans with provider.name as provider %}Você está prestes a fazer login usando uma conta de terceiros do {{ provider }}.{% endblocktrans %}
         </p>
     {% endif %}
     {% element form method="post" no_visible_fields=True %}
         {% slot actions %}
             {% csrf_token %}
-            {% element button type="submit" %}
+            <button type="submit" class="button">
                 {% trans "Continue" %}
-            {% endelement %}
+            </button>
         {% endslot %}
     {% endelement %}
 {% endblock content %}

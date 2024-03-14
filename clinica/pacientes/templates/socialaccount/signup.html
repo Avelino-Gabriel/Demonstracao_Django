@@ -2,15 +2,15 @@
 {% load i18n %}
 {% load allauth %}
 {% block head_title %}
-    {% trans "Signup" %}
+    {% trans "Cadastro" %}
 {% endblock head_title %}
 {% block content %}
     {% element h1 %}
-        {% trans "Sign Up" %}
+        {% trans "Cadastro" %}
     {% endelement %}
     <p>
-        {% blocktrans with provider_name=account.get_provider.name site_name=site.name %}You are about to use your {{provider_name}} account to login to
-{{site_name}}. As a final step, please complete the following form:{% endblocktrans %}
+        {% blocktrans with provider_name=account.get_provider.name site_name=site.name %}Você está prestes a usar sua conta do {{provider_name}} para fazer login
+        {{site_name}}. Como etapa final, preencha o seguinte formulário:{% endblocktrans %}
     </p>
     {% url 'socialaccount_signup' as action_url %}
     {% element form form=form method="post" action=action_url %}
@@ -25,9 +25,9 @@
             {% endif %}
         {% endslot %}
         {% slot actions %}
-            {% element button type="submit" %}
-                {% trans "Sign Up" %}
-            {% endelement %}
+            <button type="submit">
+                {% trans "Cadastre-se" %}
+            </button>
         {% endslot %}
     {% endelement %}
 {% endblock content %}

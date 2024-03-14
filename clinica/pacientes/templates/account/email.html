@@ -1,9 +1,14 @@
 {% extends "account/base_manage_email.html" %}
 {% load allauth i18n %}
+{% load static %}
 {% block head_title %}
     {% trans "Endereços de E-mail" %}
 {% endblock head_title %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'pacientes/css/style.css' %}">
+{% endblock extra_head %}
 {% block content %}
+<div class="container">
     {% element h1 %}
         {% trans "Endereços de E-mail" %}
     {% endelement %}
@@ -38,15 +43,15 @@
                 {% endfor %}
             {% endslot %}
             {% slot actions %}
-                {% element button type="submit" name="action_primary" %}
+                <button type="submit" class="button" name="action_primary">
                     {% trans 'Tornar Primário' %}
-                {% endelement %}
-                {% element button tags="secondary" type="submit" name="action_send" %}
+                </button>
+                <button tags="secondary" class="button margin" type="submit" name="action_send" %>
                     {% trans 'Reenviar Verificação' %}
-                {% endelement %}
-                {% element button tags="danger,delete" type="submit" name="action_remove" %}
+                </button>
+                <button tags="danger,delete" class="button" type="submit" name="action_remove">
                     {% trans 'Remover' %}
-                {% endelement %}
+                </button>
             {% endslot %}
         {% endelement %}
     {% else %}
@@ -66,12 +71,13 @@
             {% endslot %}
             befac
             {% slot actions %}
-                {% element button name="action_add" type="submit" %}
+                <button name="action_add" class="button" type="submit">
                     {% trans "Adicionar E-mail" %}
-                {% endelement %}
+                </button>
             {% endslot %}
         {% endelement %}
     {% endif %}
+</div> 
 {% endblock content %}
 {% block extra_body %}
     <script type="text/javascript">

@@ -9,7 +9,12 @@
     background-color: #F2F2F2;
     box-shadow: 0px 6px 5px 0px #00000040;
     padding: 80px 10%;
-    margin: 115px 30%;
+    margin: 115px 27%;
+}
+
+.margin{
+    position: relative;
+    top: -7px;
 }
 
 .button{

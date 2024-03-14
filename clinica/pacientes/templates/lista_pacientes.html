@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+{% extends "account/base_entrance.html" %}
+{% load i18n %}
+{% load allauth %}
 {% load static %}
-<html>
-<head>
-    
-    <title>Pacientes</title>
+{% block head_title %}
+    {% trans "Pacientes" %}
+{% endblock head_title %}
+{% block extra_head %}
     <link rel="stylesheet" href="{% static 'pacientes/css/style.css' %}">
-</head>
-<body>
+{% endblock extra_head %}
+{% block content %}
     <h1>Lista de Pacientes</h1>
     <ul>
         {% for paciente in pacientes %}
@@ -14,6 +16,6 @@
         {% endfor %}
     </ul>
     <button class="button" onclick = "window.location.href ='./login'">Fazer Login</button>
-</body>
-</html>
+{% endblock content %}
+
 

@@ -34,6 +34,12 @@
                         <li>
                             <a href="{% url 'account_logout' %}">{% trans "Sair" %}</a>
                         </li>
+                        <li>
+                            <a href="{% url 'profile' %}">{% trans "Perfil" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                        </li>
                     {% else %}
                         <li>
                             <a href="{% url 'account_login' %}">{% trans "Login" %}</a>

@@ -38,13 +38,14 @@
                     {% endslot %}
                     {% slot help_text %}
                         {% blocktranslate %}Seu endereço de e-mail ainda está pendente de verificação.{% endblocktranslate %}
-                        {% element button form="pending-email" type="submit" name="action_send" tags="minor,secondary" %}
+                        <button form="pending-email" type="submit" class="button" name="action_send" tags="minor,secondary">
                             {% trans 'Reenviar verificação' %}
-                        {% endelement %}
+                        </button>
+
                         {% if current_emailaddress %}
-                            {% element button form="pending-email" type="submit" name="action_remove" tags="danger,minor" %}
+                            <button form="pending-email" type="submit" class="button" name="action_remove" tags="danger,minor">
                                 {% trans 'Cancelar Alteração' %}
-                            {% endelement %}
+                            </button>
                         {% endif %}
                     {% endslot %}
                 {% endelement %}
@@ -56,9 +57,9 @@
             {% endelement %}
         {% endslot %}
         {% slot actions %}
-            {% element button name="action_add" type="submit" %}
+            <button name="action_add" class="button" type="submit" %>
                 {% trans "Alterar E-mail" %}
-            {% endelement %}
+            </button>
         {% endslot %}
     {% endelement %}
     {% if new_emailaddress %}

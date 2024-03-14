@@ -2,15 +2,15 @@
 {% load i18n %}
 {% load allauth %}
 {% block head_title %}
-    {% trans "Account Connections" %}
+    {% trans "Conexões de conta" %}
 {% endblock head_title %}
 {% block content %}
     {% element h1 %}
-        {% trans "Account Connections" %}
+        {% trans "Conexões de conta" %}
     {% endelement %}
     {% if form.accounts %}
         <p>
-            {% blocktrans %}You can sign in to your account using any of the following third-party accounts:{% endblocktrans %}
+            {% blocktrans %}Você pode fazer login na sua conta usando qualquer uma das seguintes contas de terceiros:{% endblocktrans %}
         </p>
         {% url 'socialaccount_connections' as action_url %}
         {% element form form=form method="post" action=action_url %}
@@ -36,16 +36,16 @@
                 {% endfor %}
             {% endslot %}
             {% slot actions %}
-                {% element button tags="delete,danger" type="submit" %}
-                    {% trans 'Remove' %}
-                {% endelement %}
+                <button tags="delete,danger" class="button" type="submit">
+                    {% trans 'Remover' %}
+                </button>
             {% endslot %}
         {% endelement %}
     {% else %}
-        <p>{% trans 'You currently have no third-party accounts connected to this account.' %}</p>
+        <p>{% trans 'Atualmente você não tem contas de terceiros conectadas a esta conta.' %}</p>
     {% endif %}
     {% element h2 %}
-        {% trans 'Add a Third-Party Account' %}
+        {% trans 'Adicionar uma conta de terceiros' %}
     {% endelement %}
     {% include "socialaccount/snippets/provider_list.html" with process="connect" %}
     {% include "socialaccount/snippets/login_extra.html" %}
