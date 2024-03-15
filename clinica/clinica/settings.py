@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'pacientes',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 LOGIN_URL = '/login/'
+ASGI_APPLICATION = "clinica.asgi.application"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
