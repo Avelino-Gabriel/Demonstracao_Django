@@ -16,11 +16,14 @@
         {% endfor %}
     </ul>
     <button class="button" onclick = "window.location.href ='./login'">Fazer Login</button>
-    <textarea name="ta" id="results" cols="30" rows="10">
+    <div class="container">
+        <textarea name="ta" id="results" cols="30" rows="10">
   
-    </textarea><br>
-    Enter the expression: <input type="text" id="exp">
-    <input type="button" id="submit" value="Get Results">
+        </textarea><br>
+        Enter the expression: <input type="text" id="exp">
+        <input type="button" class="button margin-top" id="submit" value="Get Results">
+    </div>
+    
     <script>
         const socket = new WebSocket('ws://localhost:8000/ws/livec/');
         socket.onmessage = (e) => {

@@ -17,6 +17,10 @@
     top: -7px;
 }
 
+.margin-top{
+    margin-top: 20px;
+}
+
 .button{
     width: 130px;
     height: 40px;
